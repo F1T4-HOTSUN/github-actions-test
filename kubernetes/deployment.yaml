@@ -16,5 +16,6 @@ spec:
       containers:
       - name: food-app
         image: mjtwinsbbc/github-action-test:latest  # 이미지 이름
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
