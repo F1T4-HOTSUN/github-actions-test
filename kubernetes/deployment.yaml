@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: food-app
+  namespace: ns-github-actions-test  # 네임스페이스 지정
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: food-app
+  template:
+    metadata:
+      labels:
+        app: food-app
+    spec:
+      containers:
+      - name: food-app
+        image: mjtwinsbbc/github-action-test:latest  # 이미지 이름
+        ports:
+        - containerPort: 80
