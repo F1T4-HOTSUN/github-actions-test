@@ -47,4 +47,4 @@ jobs:
         kubectl apply -f kubernetes/namespace.yaml
         kubectl apply -f kubernetes/deployment.yaml
         kubectl apply -f kubernetes/service.yaml
-
+        kubectl rollout restart deployment/food-app  # 배포를 강제로 재시작하여 새로운 이미지 적용
