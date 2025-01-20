@@ -38,7 +38,8 @@ jobs:
     - name: Set kubeconfig as an environment variable
       run: |
         aws eks update-kubeconfig --region ap-northeast-2 --name hotsun-eks-yiztG3Cs
-        echo "KUBECONFIG=$(cat ~/.kube/config)" >> $GITHUB_ENV
+        export KUBECONFIG=$HOME/.kube/config
+        echo "KUBECONFIG=$HOME/.kube/config" >> $GITHUB_ENV
 
     # 6. kubectl을 사용한 EKS 배포
     - name: Deploy to EKS
